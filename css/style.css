@@ -1,0 +1,109 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8;
+    color: #222;
+}
+
+/* Custom Letter Spacing */
+.tracking-wider {
+    letter-spacing: 3px;
+}
+
+.tracking-wide {
+    letter-spacing: 8px;
+}
+
+/* --- Hero Banner Section --- */
+.hero {
+    min-height: 85vh;
+    position: relative;
+    background: linear-gradient(rgba(10, 20, 30, 0.7), rgba(10, 20, 30, 0.7)), 
+                url('../img/092226-likha-hp-fullbleed.jpg') no-repeat center center/cover;
+}
+
+/* Force canvas to cover full background area */
+#hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none; /* Allows user clicks through canvas */
+}
+
+/* Ensure text & buttons stay on top of the canvas */
+.hero .z-2 {
+    position: relative;
+    z-index: 2;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Dark Glassmorphism Navbar --- */
+.navbar-glass {
+    /* Semi-transparent dark background */
+    background: rgba(10, 15, 25, 0.65); 
+    
+    /* Frosted glass blur effect */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* Subtle glass borders and depth shadow */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    
+    transition: all 0.3s ease;
+}
+
+/* Ensure mobile menu popup matches glass styling */
+@media (max-width: 991.88px) {
+    .navbar-collapse {
+        background: rgba(10, 15, 25, 0.95);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Base navbar transition settings */
+.navbar {
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* State 1: Completely transparent at the very top */
+.navbar-transparent {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: 1px solid transparent !important;
+    box-shadow: none !important;
+}
+
+/* State 2: Dark glass effect when scrolled down */
+.navbar-scrolled {
+    background: rgba(10, 15, 25, 0.3) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Mobile dropdown menu background */
+@media (max-width: 991.88px) {
+    .navbar-collapse {
+        background: rgba(10, 15, 25, 0.95);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
